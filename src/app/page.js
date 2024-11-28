@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from "react";
 
@@ -12,8 +13,10 @@ export default function Home() {
     const isLeftSide = clientX < position.x;
 
     // Update image position and flip
-    setFlip(isLeftSide ? -1 : 1);
+    setFlip(isLeftSide ? 1 : -1);
+    setTimeout(() => {
     setPosition({ x: clientX, y: clientY });
+    }, 1000);
   };
 
   return (
@@ -37,7 +40,7 @@ export default function Home() {
           left: `${position.x - 50}px`,
           width: "100px",
           height: "100px",
-          transition: "all 1s ease", // Smooth transition
+           transition: "top 2s ease, left 2s ease, transform 2s ease",
           transform: `scaleX(${flip})`, // Flip the image horizontally
         }}
       />
