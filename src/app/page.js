@@ -14,9 +14,7 @@ export default function Home() {
 
     // Update image position and flip
     setFlip(isLeftSide ? 1 : -1);
-    setTimeout(() => {
     setPosition({ x: clientX, y: clientY });
-    }, 1000);
   };
 
   return (
@@ -40,7 +38,7 @@ export default function Home() {
           left: `${position.x - 50}px`,
           width: "100px",
           height: "100px",
-           transition: "top 2s ease, left 2s ease, transform 2s ease",
+           transition: "top 4s ease-in-out, left 4s ease-in-out",
           transform: `scaleX(${flip})`, // Flip the image horizontally
         }}
       />
